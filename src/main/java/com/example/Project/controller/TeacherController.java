@@ -1,6 +1,7 @@
 package com.example.Project.controller;
 
 import com.example.Project.entity.Course;
+import com.example.Project.entity.Student;
 import com.example.Project.entity.Teacher;
 import com.example.Project.entity.TeacherCourseMapping;
 import com.example.Project.service.TeacherService;
@@ -40,5 +41,10 @@ public class TeacherController {
     @GetMapping("/courses")
     public List<Course> fetchCoursesByTeacher(@RequestParam("teacher_name") String teacherName){
         return teacherService.fetchCoursesByTeacher(teacherName);
+    }
+
+    @GetMapping("/name/{name}")
+    public Teacher fetchTeacherByName(@PathVariable("name") String teacherName){
+        return teacherService.fetchTeacherByName(teacherName);
     }
 }

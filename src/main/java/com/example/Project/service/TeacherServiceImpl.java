@@ -1,6 +1,7 @@
 package com.example.Project.service;
 
 import com.example.Project.entity.Course;
+import com.example.Project.entity.Student;
 import com.example.Project.entity.Teacher;
 import com.example.Project.entity.TeacherCourseMapping;
 import com.example.Project.repository.CourseRepository;
@@ -76,5 +77,10 @@ public class TeacherServiceImpl implements TeacherService{
             }
         }
         return courses;
+    }
+
+    @Override
+    public Teacher fetchTeacherByName(String teacherName) {
+        return teacherRepository.findByTeacherName(teacherName);
     }
 }

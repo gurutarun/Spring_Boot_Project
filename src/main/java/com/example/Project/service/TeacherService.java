@@ -1,6 +1,7 @@
 package com.example.Project.service;
 
 import com.example.Project.entity.Course;
+import com.example.Project.entity.Student;
 import com.example.Project.entity.Teacher;
 import com.example.Project.entity.TeacherCourseMapping;
 
@@ -16,4 +17,6 @@ public interface TeacherService {
     public void mapTeacherToCourse(List<TeacherCourseMapping> teacherCourseMappings);
 
     public List<Course> fetchCoursesByTeacher(String teacherName);
+
+    public Teacher fetchTeacherByName(String teacherName);
 }
