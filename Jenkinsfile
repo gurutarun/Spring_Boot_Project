@@ -2,6 +2,7 @@ pipeline {
     agent any
     parameters {
         booleanParam(name: 'executeTests', defaultValue: false, description: 'boolean value to execute tests or not')
+        booleanParam(name: 'executeBuilds', defaultValue: false, description: 'boolean value to execute builds or not')
     }
     stages {
 
