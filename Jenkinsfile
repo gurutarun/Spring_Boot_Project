@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    parameters {
+        booleanParam(name: 'executeTests', defaultValue: false, description: 'boolean value to execute tests or not')
+    }
     stages {
 
         stage("build") {
@@ -9,6 +11,11 @@ pipeline {
             }
         }
         stage("test") {
+            when {
+                expression {
+                    params.executeTests
+                }
+            }
             steps {
                 echo 'testing the application...!'
             }
